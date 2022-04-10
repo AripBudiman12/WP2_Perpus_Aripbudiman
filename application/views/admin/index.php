@@ -10,20 +10,21 @@
                         <div class="col mr-2">
                             <div class="text-md font-weight-bold text-white text-uppercase mb-1">
                                 Jumlah Anggota</div>
-                                <div class="h1 mb-0 font-weight-bold text-white"><?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?>
+                                <div class="h1 mb-0 font-weight-bold text-white">
+                                    <?= $this->ModelUser->getUserWhere(['role_id' => 1])->num_rows(); ?>
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <a href="<?= base_url('user/anggota'); ?>">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i></a>
+                                <i class="fas fa-users fa-3x text-warning"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2 bg-warning">
+            <div class="card border-left-primary shadow h-100 py-2 bg-warning">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -38,12 +39,13 @@
                         </div>
                         <div class="col-auto">
                             <a href="<?= base_url('buku'); ?>">
-                            <i class="fas fa-dollar-sign fa-3x text-primary"></i></a>
+                            <i class="fas fa-book fa-3x text-primary"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2 bg-danger">
                 <div class="card-body">
@@ -51,13 +53,12 @@
                         <div class="col mr-2">
                             <div class="text-md font-weight-bold text-white text-uppercase mb-1">
                                  Buku yang dipinjam</div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="h1 mb-0 mr-3 font-weight-bold text-white">
+                            <div class="h1 mb-0 font-weight-bold text-white">
                                      <?php
                                     $where = ['dipinjam != 0'];
-                                    $totalpinjam = $this->ModelBuku->total('dipinjam',
+                                    $totaldipinjam = $this->ModelBuku->total('dipinjam',
                                     $where);
-                                    echo $totalpinjam;
+                                    echo $totaldipinjam;
                                     ?>
                                 </div>
                             </div>
@@ -69,7 +70,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2 bg-success">
@@ -82,7 +82,7 @@
                                 <?php
                                 $where = ['diboking != 0'];
                                 $totaldibooking = $this->ModelBuku->total
-                                ('diboking', $where);
+                                ('dibooking', $where);
                                 echo $totaldibooking; 
                                 ?>
                             </div>
