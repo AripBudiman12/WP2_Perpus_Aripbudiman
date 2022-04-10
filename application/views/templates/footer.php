@@ -8,7 +8,13 @@
     </div>
 </footer>
 <!-- End of Footer -->
+
 </div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -50,8 +56,8 @@
 
     <script>
         $('.custom-file-input').on('change', function() {
-            let filename = $(this).val().split('\\').pop();
-            $(this).next('.custom-file-label').addClass("selected").html(filename);
+            let fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass("selected").html(fileName);
         });
 
         $(document).ready(function() {
