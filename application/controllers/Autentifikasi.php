@@ -103,7 +103,7 @@ class Autentifikasi extends CI_Controller
         true));
         $password = $this->input->post('password', true);
 
-        $user = $this->ModelUSer->cekData(['email' => $email]) 
+        $user = $this->ModelUser->cekData(['email' => $email]) 
         ->row_array();
 
         //jika usernya ada
