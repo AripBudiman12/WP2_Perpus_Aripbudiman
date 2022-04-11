@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Akses diblok</title>
+    <title>Gagal Aktifiasi Akun</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,10 +38,9 @@
 
                     <!-- 404 Error Text -->
                     <div class="text-center">
-                        <div class="error mx-auto" data-text="404">403</div>
-                        <p class="lead text-gray-800 mb-5">Akses Tidak diizinkan</p>
-                        <p class="text-gray-500 mb-0">Sepertinya kamu mengakses halaman yang salah</p>
-                        <a href="<?= base_url('user'); ?>">&larr; Kembali ke Dashboard</a>
+                    <?= $this->session->flashdata('pesan'); ?>
+                    <a href="<?= base_url('autentifikasi'); ?>"
+                    class="btn btn-secondar y" >&larr; Close </a>
                     </div>
 
                 </div>
@@ -61,26 +60,6 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -90,6 +69,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+
+    <script>
+        $('.alert-message').alert().delay(3500).slideUp('slow');
+    </script>
 
 </body>
 
