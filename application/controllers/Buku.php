@@ -214,6 +214,7 @@ class Buku extends CI_Controller
         }
     }
 
+    // function hapusBuku
     public function hapusBuku()
     {
         $where = ['id' => $this->uri->segment(3)];
