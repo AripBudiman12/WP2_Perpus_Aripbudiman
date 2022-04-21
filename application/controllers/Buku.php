@@ -123,6 +123,7 @@ class Buku extends CI_Controller
         redirect('buku/kategori');
     }
 
+    //function ubah buku
     public function ubahBuku()
     {
         $data['judul'] = 'Ubah Data Buku';
