@@ -42,7 +42,7 @@
                         <td><?= $b['isbn']; ?></td>
                         <td><?= $b['stok']; ?></td>
                         <td><?= $b['dipinjam']; ?></td>
-                        <td><?= $b['diboking']; ?></td>
+                        <td><?= $b['dibooking']; ?></td>
                         <td>
                         <picture>
                             <source srcset=""

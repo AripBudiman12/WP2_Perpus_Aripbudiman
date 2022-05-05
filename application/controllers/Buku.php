@@ -96,7 +96,7 @@ class Buku extends CI_Controller
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
 
-        $this->form_validation->set_rules('kategori', 'Kategori', 'required', [
+        $this->form_validation->set_rules('kategori', 'kategori', 'required', [
             'required' => 'Judul Buku harus diisi'
         ]);
 
@@ -108,7 +108,7 @@ class Buku extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $data = [
-                'kategori' => $this->input->post('kategori', true)
+                'kategori' => $this->input->post('kategori')
             ];
 
             $this->ModelBuku->simpanKategori($data);
@@ -118,7 +118,7 @@ class Buku extends CI_Controller
 
     public function hapusKategori()
     {
-        $where = ['id_kategori' => $this->uri->segment(3)];
+        $where = ['id' => $this->uri->segment(3)];
         $this->ModelBuku->hapusKategori($where);
         redirect('buku/kategori');
     }
@@ -129,8 +129,7 @@ class Buku extends CI_Controller
         $data['judul'] = 'Ubah Data Buku';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['buku'] = $this->ModelBuku->bukuWhere(['id' => $this->uri->segment(3)])->result_array();
-        $kategori = $this->ModelBuku->joinKategoriBuku(['buku.id' => 
-        $this->uri->segment(3)])->result_array();
+        $kategori = $this->ModelBuku->joinKategoriBuku(['buku.id' => $this->uri->segment(3)])->result_array();
         foreach ($kategori as $k) {
         $data['id'] = $k['id_kategori'];
         $data['k'] = $k['kategori'];
