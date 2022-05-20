@@ -53,7 +53,7 @@
 
                             <picture>
                                 <source srcset="" type="image/svg+xml">
-                                <img src="<?= base_url('assets/img/upload/') . $b['image']; ?>" class="rounded mx-auto mb-3 d-blok" alt="...">
+                                <img src="<?= base_url('assets/img/buku/') . $b['image']; ?>" class="rounded mx-auto mb-3 d-blok" alt="...">
                             </picture>
 
                         <?php } ?>

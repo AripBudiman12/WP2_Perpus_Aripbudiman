@@ -48,7 +48,7 @@
                             <source srcset=""
                             type="image/svg+xml">
                             <img src="<?=
-                            base_url('assets/img/upload/') . $b['image'];?>" class="img-fluid 
+                            base_url('assets/img/buku/') . $b['image'];?>" class="img-fluid 
                             img-thumbnail" alt="...">
                         </picture></td>
                         <td>

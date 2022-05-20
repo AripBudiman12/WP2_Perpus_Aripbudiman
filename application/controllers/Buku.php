@@ -50,7 +50,7 @@ class Buku extends CI_Controller
 
         //konfigurasi sebelum gambar diupload
 
-        $config['upload_path'] = './assets/img/upload';
+        $config['upload_path'] = './assets/img/buku';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['max_width'] = '1024';
@@ -173,7 +173,7 @@ class Buku extends CI_Controller
     'numeric' => 'Yang anda masukan bukan angka'
     ]);
     //konfigurasi sebelum gambar diupload
-    $config['upload_path'] = './assets/img/';
+    $config['upload_path'] = './assets/img/buku/';
     $config['allowed_types'] = 'jpg|png|jpeg';
     $config['max_size'] = '3000';
     $config['max_width'] = '1024';
@@ -190,7 +190,7 @@ class Buku extends CI_Controller
     } else {
         if ($this->upload->do_upload('image')) {
             $image = $this->upload->data();
-            unlink('assets/img/upload/' . $this->input->post('old_pict', TRUE));
+            unlink('assets/img/buku/' . $this->input->post('old_pict', TRUE));
             $gambar = $image['file_name'];
         } else {
             $gambar = $this->input->post('old_pict', TRUE);
