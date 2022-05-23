@@ -96,8 +96,7 @@
                             <option value="">Pilih Kategori</option>
                             <?php
                             foreach ($kategori as $k) { ?>
-                            <option value="<?= $k['id'];?>"><?=
-                            $k['kategori'];?></option>
+                            <option value="<?= $k['id'];?>"><?= $k['kategori'];?></option>
                             <?php } ?>
                         </select>
                     </div>
